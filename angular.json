@@ -122,6 +122,14 @@
           }
         }
       }
-    }},
-  "defaultProject": "tasks-app"
+    }
+  },
+  "defaultProject": "tasks-app",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "inlineTemplate": true
+      }
+    }
+  }
 }
