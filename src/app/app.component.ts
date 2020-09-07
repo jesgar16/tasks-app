@@ -3,9 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1 class="app-title">
-      Tareas diarias
-    </h1>
+    <div class="card-header-tab card-header">
+      <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+        <i class="fa fa-tasks"></i>&nbsp;Mis Tareas
+      </div>
+    </div>
 
     <app-list-manager></app-list-manager>
   `,

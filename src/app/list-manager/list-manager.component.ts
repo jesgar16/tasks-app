@@ -7,10 +7,12 @@ import { TaskListService } from '../services/task-list.service';
   template: `
   <div class="task-app">
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
-
-    <ul>
-      <li *ngFor="let taskItem of taskList">
-        <app-task-item [item]="taskItem" (remove)="removeItem($event)"></app-task-item>
+    <ul class=" list-group list-group-flush">
+      <li *ngFor="let taskItem of taskList"  class="list-group-item">
+        <app-task-item [item]="taskItem"
+          (remove)="removeItem($event)"
+           (update)="updateItem($event.item, $event.changes)">
+        </app-task-item>
       </li>
     </ul>
     </div>
@@ -28,6 +30,10 @@ export class ListManagerComponent implements OnInit {
 
   addItem(title: string) {
     this.taskListService.addItem({ title });
+  }
+
+  updateItem(item, changes) {
+    this.taskListService.updateItem(item, changes);
   }
 
   removeItem(item) {

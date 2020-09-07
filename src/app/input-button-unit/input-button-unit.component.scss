@@ -6,7 +6,21 @@
   border: solid 1px #dddddd;
   border-radius: 5px;
   flex-grow: 1;
+  margin-right: 10px;
 }
+
+@media only screen and (min-width: 992px) {
+  .task-input {
+   width: 80%;
+  }
+}
+
+@media only screen and (min-width: 250px) {
+  .task-input {
+   width: 40%;
+  }
+}
+
 
 :host(:not([hidden])) {
   display: flex;

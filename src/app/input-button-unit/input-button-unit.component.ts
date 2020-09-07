@@ -3,12 +3,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-input-button-unit',
   template: `
-    <input class="task-input"
+    <input class="task-input form-control-sm"
+       autofocus
        #inputElementRef
-       [value]="title"
+       [value]=""
+       placeholder="Ingresa tu tarea"
        (keyup.enter)="submitValue($event.target.value)
       ">
-    <button class="btn btn-lg" (click)="submitValue(inputElementRef.value)">
+    <button class="btn btn-sm btn-primary"
+      title="Agregar tarea" (click)="submitValue(inputElementRef.value)">
       <i class="fa fa-plus"></i>
     </button>
   `,
@@ -16,8 +19,6 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class InputButtonUnitComponent implements OnInit {
   @Output() submit: EventEmitter<string> = new EventEmitter();
-
-  title = '';
 
   constructor() { }
 

@@ -1,6 +1,7 @@
 .task-app {
   position: relative;
-  width: 400px;
+  width: 800px;
+  height: 700px;
   padding: 30px 30px 15px;
   background: white;
   border: 1px solid;
@@ -11,6 +12,18 @@
   margin: 20px auto;
 }
 
+
+@media only screen and (max-width: 756px) {
+    .task-app {
+   width: 75%;
+  }
+}
+
+@media only screen and (min-width: 756px) {
+  .task-app {
+   width: 90%;
+  }
+}
 .task-app::before, .task-app::after {
   content: '';
   position: absolute;
@@ -39,6 +52,7 @@
 }
 
 .task-item {
+  margin-top: 10px;
   padding: 10px 0;
   border-top: solid 1px #ddd;
   min-height: 30px;
@@ -55,4 +69,5 @@
 .task-title {
   flex-grow: 1;
   padding-left: 11px;
+  padding-top: 10px;
 }
