@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TaskItem } from './interfaces/task-item';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +20,8 @@ import { Component } from '@angular/core';
   
 })
 export class AppComponent {
-  title = 'tasks-app';
-  taskList = [
+  title = 'app';
+  taskList: TaskItem[] = [
     { title: 'Socializar requerimientos con el cliente.' },
     { title: 'Diseñar base de datos.' },
     { title: 'Definir tipo de aplicación.' },
