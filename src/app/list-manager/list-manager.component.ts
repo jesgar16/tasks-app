@@ -23,11 +23,11 @@ export class ListManagerComponent implements OnInit {
   constructor(private taskListService:TaskListService) { }
 
   ngOnInit(): void {
-    this.taskList = this.taskListService.getTodoList();
+    this.taskList = this.taskListService.getTaskList();
   }
 
   addItem(title: string) {
-    this.taskList.push({ title });
+    this.taskListService.addItem({ title });
   }
 
 }
