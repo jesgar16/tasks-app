@@ -1,0 +1,58 @@
+.task-app {
+  position: relative;
+  width: 400px;
+  padding: 30px 30px 15px;
+  background: white;
+  border: 1px solid;
+  border-color: #dfdcdc #d9d6d6 #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+.task-app::before, .task-app::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  height: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.task-app::after {
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.task-app::before {
+  bottom: -5px;
+  left: 2px;
+  right: 2px;
+  border-color: #c4c4c4;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.task-item {
+  padding: 10px 0;
+  border-top: solid 1px #ddd;
+  min-height: 30px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-checkbox {
+  flex-shrink: 0;
+  margin: auto 1ex auto 0;
+}
+
+.task-title {
+  flex-grow: 1;
+  padding-left: 11px;
+}

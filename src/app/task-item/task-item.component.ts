@@ -4,7 +4,9 @@ import { TaskItem } from '../interfaces/task-item';
 @Component({
   selector: 'app-task-item',
   template: `
-    {{ item.title }}
+    <div class="task-item">
+      {{ item.title }}
+    </div>
   `,
   styleUrls: ['./task-item.component.scss']
 })

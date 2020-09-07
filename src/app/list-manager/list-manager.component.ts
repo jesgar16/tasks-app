@@ -4,13 +4,15 @@ import { TaskItem } from '../interfaces/task-item';
 @Component({
   selector: 'app-list-manager',
   template: `
-     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
+  <div class="task-app">
+    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
       <li *ngFor="let taskItem of taskList">
         <app-task-item [item]="taskItem"></app-task-item>
       </li>
     </ul>
+    </div>
   `,
   styleUrls: ['./list-manager.component.scss']
 })
