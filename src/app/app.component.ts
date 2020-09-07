@@ -8,7 +8,7 @@ import { TaskItem } from './interfaces/task-item';
       Tareas diarias de: {{ title }}!
     </h1>
 
-    <app-input-button-unit></app-input-button-unit>
+    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
       <li *ngFor="let taskItem of taskList">
@@ -21,11 +21,18 @@ import { TaskItem } from './interfaces/task-item';
 })
 export class AppComponent {
   title = 'app';
+
+  addItem(title: string) {
+    this.taskList.push({ title });
+  }
+  
   taskList: TaskItem[] = [
     { title: 'Socializar requerimientos con el cliente.' },
     { title: 'Diseñar base de datos.' },
     { title: 'Definir tipo de aplicación.' },
     { title: 'Socializar proyecto con el equipo' }
   ];
+
+
 }
 
