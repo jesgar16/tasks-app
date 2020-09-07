@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskItem } from '../interfaces/task-item';
+import { TaskListService } from '../services/task-list.service';
 
 @Component({
   selector: 'app-list-manager',
@@ -17,17 +18,12 @@ import { TaskItem } from '../interfaces/task-item';
   styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent implements OnInit {
-  
-  taskList: TaskItem[] = [
-    { title: 'Socializar requerimientos con el cliente.' },
-    { title: 'Diseñar base de datos.' },
-    { title: 'Definir tipo de aplicación.' },
-    { title: 'Socializar proyecto con el equipo' }
-  ];
 
-  constructor() { }
+  taskList: TaskItem[];
+  constructor(private taskListService:TaskListService) { }
 
   ngOnInit(): void {
+    this.taskList = this.taskListService.getTodoList();
   }
 
   addItem(title: string) {
