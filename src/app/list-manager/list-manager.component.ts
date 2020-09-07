@@ -10,7 +10,7 @@ import { TaskListService } from '../services/task-list.service';
 
     <ul>
       <li *ngFor="let taskItem of taskList">
-        <app-task-item [item]="taskItem"></app-task-item>
+        <app-task-item [item]="taskItem" (remove)="removeItem($event)"></app-task-item>
       </li>
     </ul>
     </div>
@@ -30,4 +30,7 @@ export class ListManagerComponent implements OnInit {
     this.taskListService.addItem({ title });
   }
 
+  removeItem(item) {
+    this.taskListService.deleteItem(item);
+  }
 }
