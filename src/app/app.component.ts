@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TaskItem } from './interfaces/task-item';
 
 @Component({
   selector: 'app-root',
@@ -8,31 +7,14 @@ import { TaskItem } from './interfaces/task-item';
       Tareas diarias de: {{ title }}!
     </h1>
 
-    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
-
-    <ul>
-      <li *ngFor="let taskItem of taskList">
-        <app-task-item [item]="taskItem"></app-task-item>
-      </li>
-    </ul>
+    <app-list-manager></app-list-manager>
   `,
+  
   styleUrls: ['./app.component.scss'],
   
 })
 export class AppComponent {
   title = 'app';
-
-  addItem(title: string) {
-    this.taskList.push({ title });
-  }
-  
-  taskList: TaskItem[] = [
-    { title: 'Socializar requerimientos con el cliente.' },
-    { title: 'Diseñar base de datos.' },
-    { title: 'Definir tipo de aplicación.' },
-    { title: 'Socializar proyecto con el equipo' }
-  ];
-
 
 }
 
